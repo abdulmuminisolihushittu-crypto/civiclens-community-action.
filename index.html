@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1420" />
+  <meta name="description" content="CivicLens helps communities report, prioritize, track and verify public infrastructure problems." />
+  <title>CivicLens — See it. Report it. Track the fix.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="CivicLens home">
+      <span class="brand-mark"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 3.5 31 11v14L18 32.5 5 25V11L18 3.5Z"/><path d="M11 18.2 15.3 22.5 25.5 12.4"/></svg></span>
+      <span class="brand-name">civic<span>lens</span><small>COMMUNITY ACTION NETWORK</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#dashboard">Dashboard</a><a class="nav-link" href="#reports">Explore reports</a><a class="nav-link" href="#how-it-works">How it works</a><a class="nav-link" href="#impact">Impact</a>
+    </nav>
+    <div class="top-actions"><button class="text-button" id="adminToggle" type="button"><span class="status-dot"></span><span id="adminLabel">Citizen view</span></button><button class="button button-primary button-small" data-open-report type="button"><span>＋</span> Report an issue</button><button class="mobile-menu" id="mobileMenu" aria-label="Open menu" type="button">☰</button></div>
+  </header>
+
+  <main id="home">
+    <section class="hero shell" id="dashboard">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> THE CITY IS A SHARED RESPONSIBILITY <span class="live-pill"><i></i> DEMO LIVE</span></div>
+        <h1>Make your community<br/><em>impossible to ignore.</em></h1>
+        <p class="hero-description">One place to report what is broken, bring neighbours together, and follow every issue from <strong>noticed</strong> to <strong>fixed.</strong></p>
+        <div class="hero-actions"><button class="button button-primary button-large" data-open-report type="button">Report a community issue <span>↗</span></button><a class="button button-ghost button-large" href="#reports">Explore live reports <span>↓</span></a></div>
+        <div class="trust-row"><div class="avatar-stack"><span>AM</span><span>KO</span><span>ZE</span><span>+</span></div><div><strong>Better streets start with people.</strong><small>A shared record. A visible response. A stronger community.</small></div></div>
+      </div>
+      <div class="hero-visual" aria-label="Illustration of community reports being tracked across a city">
+        <div class="visual-grid"></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="city-map-card">
+          <div class="map-topline"><span><i class="pulse-dot"></i> COMMUNITY PULSE</span><span class="map-date" id="todayLabel">TODAY</span></div>
+          <div class="map-art">
+            <svg viewBox="0 0 520 330" role="img" aria-label="Stylized city map with issue markers">
+              <defs><pattern id="blocks" width="76" height="62" patternUnits="userSpaceOnUse"><rect x="5" y="5" width="60" height="42" rx="7" fill="#172b3a" stroke="#294354" stroke-width="1"/><path d="M14 16h20M14 23h34" stroke="#294354" stroke-width="2" stroke-linecap="round"/></pattern></defs>
+              <rect width="520" height="330" fill="url(#blocks)"/>
+              <path d="M-25 120 C70 75 115 195 202 150 S370 75 555 128" fill="none" stroke="#314d5a" stroke-width="28"/><path d="M-25 120 C70 75 115 195 202 150 S370 75 555 128" fill="none" stroke="#78909c" stroke-opacity=".35" stroke-width="2" stroke-dasharray="8 10"/>
+              <path d="M130 -15 C180 75 230 102 245 176 S275 264 320 350" fill="none" stroke="#314d5a" stroke-width="22"/><path d="M130 -15 C180 75 230 102 245 176 S275 264 320 350" fill="none" stroke="#78909c" stroke-opacity=".35" stroke-width="2" stroke-dasharray="8 10"/>
+              <path d="M390 -20 C370 65 420 180 480 345" fill="none" stroke="#314d5a" stroke-width="18"/><path d="M390 -20 C370 65 420 180 480 345" fill="none" stroke="#78909c" stroke-opacity=".3" stroke-width="2" stroke-dasharray="7 9"/>
+              <path d="M15 265 Q125 210 195 255 T365 236 T525 265" fill="none" stroke="#225a55" stroke-width="18" opacity=".8"/>
+              <g class="map-pin pin-red" transform="translate(175 91)"><circle r="22"/><circle r="8"/><path d="M-5 29 0 39 5 29"/></g>
+              <g class="map-pin pin-yellow" transform="translate(350 184)"><circle r="19"/><circle r="7"/><path d="M-5 25 0 34 5 25"/></g>
+              <g class="map-pin pin-green" transform="translate(90 220)"><circle r="17"/><circle r="6"/><path d="M-4 22 0 30 4 22"/></g>
+              <g class="map-pin pin-blue" transform="translate(430 75)"><circle r="16"/><circle r="6"/><path d="M-4 21 0 29 4 21"/></g>
+            </svg>
+            <div class="map-label label-one"><b>Drainage blockage</b><small>High priority · 2.4 km away</small></div><div class="map-label label-two"><b>Streetlight repaired</b><small>Verified by community</small></div>
+          </div>
+          <div class="map-legend"><span><i class="legend red"></i>Urgent</span><span><i class="legend yellow"></i>In progress</span><span><i class="legend green"></i>Resolved</span></div>
+        </div>
+        <div class="floating-stat floating-top"><span class="float-icon">↗</span><div><strong id="heroResolved">08</strong><small>issues resolved</small></div><span class="float-up">↑</span></div>
+        <div class="floating-stat floating-bottom"><span class="float-icon lime-icon">◎</span><div><strong id="heroCommunity">240+</strong><small>community voices</small></div></div>
+        <div class="visual-caption">A clearer picture of what needs attention.</div>
+      </div>
+    </section>
+
+    <section class="metrics shell" aria-label="Community statistics">
+      <div class="metric-intro"><span class="section-kicker">THE BIG PICTURE</span><strong>Small reports.<br/>Measurable progress.</strong></div>
+      <div class="metric"><span class="metric-icon">◉</span><strong id="metricReports">128</strong><span>Total reports</span><small>Across this demo community</small></div>
+      <div class="metric"><span class="metric-icon orange">⌁</span><strong id="metricUrgent">24</strong><span>Need attention</span><small>High-priority open issues</small></div>
+      <div class="metric"><span class="metric-icon green">✓</span><strong id="metricResolved">86</strong><span>Marked resolved</span><small>Awaiting / receiving verification</small></div>
+      <div class="metric"><span class="metric-icon blue">♧</span><strong id="metricSupport">1.8k</strong><span>Community support</span><small>People standing behind reports</small></div>
+    </section>
+
+    <section class="workspace shell" id="reports">
+      <div class="section-heading"><div><span class="section-kicker">FROM NOTICE TO ACTION</span><h2>Community <em>issue board.</em></h2><p>Real examples for this interactive demo. Search, filter, support and open a report to follow its journey.</p></div><button class="button button-outline" data-open-report type="button">＋ Add a report</button></div>
+      <div class="board-toolbar"><div class="toolbar-left"><div class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search issue, street or area..." aria-label="Search reports"/><kbd>⌘ K</kbd></div><div class="filter-pills" id="filterPills"><button class="filter-pill selected" data-filter="all">All issues <span id="countAll">8</span></button><button class="filter-pill" data-filter="urgent">Urgent</button><button class="filter-pill" data-filter="progress">In progress</button><button class="filter-pill" data-filter="resolved">Resolved</button></div></div><div class="toolbar-right"><label class="sort-label" for="sortSelect">Sort by</label><select id="sortSelect" class="select-control"><option value="priority">Priority</option><option value="newest">Newest</option><option value="support">Most supported</option></select></div></div>
+      <div class="board-layout"><div class="reports-grid" id="reportsGrid" aria-live="polite"></div><aside class="side-panel"><div class="side-card priority-card"><div class="side-card-top"><span class="section-kicker">SMART PRIORITY</span><span class="sparkle">✳</span></div><h3>What needs attention <em>first?</em></h3><p>Our transparent priority estimate helps highlight reports that may affect more people or create greater safety risks.</p><div class="priority-breakdown"><div><span>Public safety</span><b>40%</b><i><u style="width:86%"></u></i></div><div><span>People affected</span><b>30%</b><i><u style="width:68%"></u></i></div><div><span>Issue severity</span><b>20%</b><i><u style="width:76%"></u></i></div><div><span>Time sensitivity</span><b>10%</b><i><u style="width:58%"></u></i></div></div><small class="disclaimer">Demo scoring model — not an official emergency assessment.</small></div>
+        <div class="side-card category-card"><div class="side-card-top"><span class="section-kicker">ISSUES BY CATEGORY</span><span class="tiny-muted">LIVE DEMO</span></div><div id="categoryBreakdown" class="category-breakdown"></div></div>
+        <div class="side-cta"><span class="cta-icon">✦</span><div><b>Your voice matters here.</b><p>One clear report can help a whole neighbourhood.</p><button data-open-report type="button">Make a report <span>↗</span></button></div></div>
+      </aside></div>
+      <div class="empty-state" id="emptyState" hidden><span>⌕</span><h3>No matching reports</h3><p>Try a different search or filter, or add the first report.</p><button class="button button-primary" data-open-report type="button">Create a report</button></div>
+      <div class="board-footer"><span><i class="status-dot"></i> Demo data stored in this browser</span><button id="resetDemo" type="button">Reset demo data ↺</button></div>
+    </section>
+
+    <section class="journey-section" id="how-it-works"><div class="shell journey-inner"><div class="journey-copy"><span class="section-kicker">A SIMPLE PATH TO CHANGE</span><h2>From “someone should fix this” to <em>“it's fixed.”</em></h2><p>Good civic action should not disappear into a black hole. CivicLens makes every step visible, from the first report to community verification.</p><a class="text-link" href="#reports">See the issue board <span>↗</span></a></div><div class="journey-steps"><div class="journey-step"><span class="step-number">01</span><span class="step-icon">◎</span><div><h3>Spot & report</h3><p>Share the issue, its location, a description and a photo where useful.</p></div><span class="step-arrow">↘</span></div><div class="journey-step"><span class="step-number">02</span><span class="step-icon">✳</span><div><h3>Prioritize together</h3><p>A transparent score highlights urgency while neighbours add support.</p></div><span class="step-arrow">↘</span></div><div class="journey-step"><span class="step-number">03</span><span class="step-icon">⌁</span><div><h3>Track the response</h3><p>Follow the report through review, active work and resolution.</p></div><span class="step-arrow">↘</span></div><div class="journey-step"><span class="step-number">04</span><span class="step-icon">✓</span><div><h3>Verify the fix</h3><p>Community members can confirm whether the work is actually done.</p></div></div></div></div></section>
+
+    <section class="impact-section shell" id="impact"><div class="impact-banner"><div class="impact-orb orb-left"></div><div class="impact-orb orb-right"></div><div class="impact-content"><span class="section-kicker">THE CIVICLENS PROMISE</span><h2>A better community is<br/><em>something we build together.</em></h2><p>Technology cannot repair a road by itself. But it can make the problem visible, organize the evidence and help people follow through.</p><button class="button button-light" data-open-report type="button">Add your first report <span>↗</span></button></div><div class="impact-stats"><div><strong id="impactResolved">86</strong><span>issues resolved*</span></div><div><strong id="impactSupport">1.8k</strong><span>community support*</span></div><small>*Illustrative demo figures, not independently verified results.</small></div></div></section>
+  </main>
+
+  <footer class="footer"><div class="shell footer-inner"><a class="brand footer-brand" href="#home"><span class="brand-mark"><svg viewBox="0 0 36 36"><path d="M18 3.5 31 11v14L18 32.5 5 25V11L18 3.5Z"/><path d="M11 18.2 15.3 22.5 25.5 12.4"/></svg></span><span class="brand-name">civic<span>lens</span><small>COMMUNITY ACTION NETWORK</small></span></a><p>Built for communities that refuse to look away.</p><div class="footer-links"><a href="#how-it-works">How it works</a><a href="#reports">Explore</a><a href="#home">Back to top ↑</a></div></div><div class="shell footer-bottom"><span>© <span id="yearLabel"></span> CivicLens demo project.</span><span>Designed for transparency, participation and accountable action.</span></div></footer>
+
+  <div class="modal-backdrop" id="reportModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden><div class="modal-card"><div class="modal-header"><div><span class="section-kicker">ADD TO THE COMMUNITY BOARD</span><h2 id="modalTitle">Report an <em>issue.</em></h2></div><button class="icon-button" data-close-modal aria-label="Close report form" type="button">✕</button></div><form id="reportForm"><div class="form-grid"><label class="form-field full-field"><span>What is the problem called? *</span><input name="title" maxlength="70" required placeholder="e.g. Deep pothole near the bus stop"/></label><label class="form-field"><span>Issue category *</span><select name="category" required><option value="Roads">Roads & transport</option><option value="Waste">Waste & sanitation</option><option value="Drainage">Drainage & flooding</option><option value="Lighting">Street lighting</option><option value="Water">Water access</option><option value="Public safety">Public safety</option><option value="Other">Other</option></select></label><label class="form-field"><span>Community / location *</span><input name="location" maxlength="90" required placeholder="Street, area, city" value="Lagos, Nigeria"/></label><label class="form-field full-field"><span>Describe what you noticed *</span><textarea name="description" rows="3" maxlength="500" required placeholder="Explain what is happening, when you noticed it and who may be affected..."></textarea></label><label class="form-field"><span>How serious is it?</span><select name="severity"><option value="2">Low — inconvenient</option><option value="3" selected>Medium — needs attention</option><option value="4">High — significant disruption</option><option value="5">Critical — immediate safety concern</option></select></label><label class="form-field"><span>People affected (estimate)</span><select name="people"><option value="1">1–10 people</option><option value="2" selected>11–50 people</option><option value="3">51–200 people</option><option value="4">201–1,000 people</option><option value="5">More than 1,000 people</option></select></label><label class="form-field full-field"><span>Photo evidence <small>(optional, max 1.2 MB)</small></span><input type="file" name="photo" id="photoInput" accept="image/*"/><span id="photoHint" class="field-hint">A clear photo can help people understand the issue.</span></label></div><div class="form-note"><span>ⓘ</span><p>This prototype saves reports only in this browser. Do not submit private contact details or sensitive personal information.</p></div><div class="form-actions"><button class="button button-ghost" data-close-modal type="button">Cancel</button><button class="button button-primary" type="submit">Publish report <span>↗</span></button></div></form></div></div>
+
+  <div class="modal-backdrop" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle" hidden><div class="modal-card detail-modal-card"><div class="modal-header"><div><span class="section-kicker" id="detailEyebrow">COMMUNITY REPORT</span><h2 id="detailTitle">Issue <em>details.</em></h2></div><button class="icon-button" data-close-modal aria-label="Close report details" type="button">✕</button></div><div id="detailContent"></div></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
